@@ -524,7 +524,7 @@ bigint bigint::modPow(const bigint &exp, const bigint &p) const {
 bigint bigint::modInverse(const bigint &num) const {
     assert(!num.negative);//m为正数
     //如果不互质，则没有模逆元素
-    //assert(coprime(num));
+    assert(coprime(num));
     bigint x = xgcd(num)[1];
     //取最小正整数
     while (x < ZERO) {
